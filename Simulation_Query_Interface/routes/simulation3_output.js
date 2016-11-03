@@ -12,8 +12,12 @@ router.post('/',function(req,res,next){
 	var outputarray = new Array();
 
 	//IP address
-	var IP = fs.readFileSync('Setting.txt', 'utf8');
+	var IP_str = fs.readFileSync('ddas.conf', 'utf8');
+	var IP_array = new Array();
+	IP_array = IP_str.split("\n");
 
+	var IP_num = IP_array[0].indexOf("=");
+	var IP = IP_array[0].substring(IP_num+1, IP_array[0].length-1);
 
 	var IP_metadata = 'mongodb://' + IP + '/metadata';
 	var IP_simulation = 'mongodb://' + IP + '/simulation';
