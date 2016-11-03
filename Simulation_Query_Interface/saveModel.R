@@ -28,15 +28,15 @@ Cm_model <- locfit(Cm ~ lp(thickness, Umach, AOA, RE, scale=TRUE, nn=0.005), dat
 
 predicted_Cm = predict(Cm_model, newdata = test_data)
 
-saveRDS(Cl_model, "C:/Coding/Simulation_DataSearch/Cl.rds")
+saveRDS(Cl_model, "./Cl.rds")
 
-saveRDS(Cdt_model, "C:/Coding/Simulation_DataSearch/Cdt.rds")
+saveRDS(Cdt_model, "./Cdt.rds")
 
-saveRDS(Cdp_model, "C:/Coding/Simulation_DataSearch/Cdp.rds")
+saveRDS(Cdp_model, "./Cdp.rds")
 
-saveRDS(Cdf_model, "C:/Coding/Simulation_DataSearch/Cdf.rds")
+saveRDS(Cdf_model, "./Cdf.rds")
 
-saveRDS(Cm_model, "C:/Coding/Simulation_DataSearch/Cm.rds")
+saveRDS(Cm_model, "./Cm.rds")
 
 predicted_Cl
 predicted_Cdt

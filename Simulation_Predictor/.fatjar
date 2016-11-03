@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Nov 03 19:05:18 KST 2016
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=Simulation_Predictor_fat.jar
+manifest.mergeall=false
+manifest.mainclass=com.kisti.edison.ddas.Predictor.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

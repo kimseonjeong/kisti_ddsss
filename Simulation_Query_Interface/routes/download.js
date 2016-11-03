@@ -9,8 +9,14 @@ router.get('/', function(req, res, next) {
 	var uri = url.parse(req.url, true);
 
 	//path를 받아서 download
-	res.download(uri.query.path);
-	
+	//path가 null일 경우에는 alert 
+	//path가 null이 아닐 경우에는 다운로드
+	if(uri.query.path == ""){
+		res.send('<script type="text/javascript">alert("download path null");javascript:history.back(-1);</script>');
+	}
+	else{ 
+		res.download(uri.query.path);
+	}
 });
 
 module.exports = router;

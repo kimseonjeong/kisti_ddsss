@@ -13,8 +13,16 @@ router.get('/', function(req, res, next) {
 	//outputarray
 	var outputarray = new Array();
 
+	//IP address
+	var IP = fs.readFileSync('Setting.txt', 'utf8');
+
+
+	var IP_metadata = 'mongodb://' + IP + '/metadata';
+	var IP_simulation = 'mongodb://' + IP + '/simulation';
+
+
 	//metadata database connect
-	client.connect('mongodb://203.153.146.39/metadata', function(err,db){
+	client.connect(IP_metadata, function(err,db){
 			
 		//kflow collection connect
 		db.collection("kflow").find().toArray(function(err, result){
@@ -36,8 +44,9 @@ router.get('/', function(req, res, next) {
 
 	//jar 파일 연결
 	//predictor connect
-	child = exec('java -jar C:\\Coding\\Simulation_DataSearch\\Predict_Test_fat.jar', function(err,stdout,stderr){
-		
+	//child = exec('java -jar C:\\Coding\\Simulation_DataSearch\\Predict_Test_fat.jar', function(err,stdout,stderr){
+	child = exec('java -jar .\\Simulation_Predictor_fat.jar', function(err,stdout,stderr){
+	
 		//error o
 		if(err)
 			console.log(err.code);

@@ -6,15 +6,15 @@ test_data = read.csv('./test_data.csv', sep=",", header=TRUE)
 
 set.seed(123)
 
-Cl_model<-readRDS("C:/Coding/Simulation_DataSearch/Cl.rds")
+Cl_model<-readRDS("./Cl.rds")
 
-Cdt_model<-readRDS("C:/Coding/Simulation_DataSearch/Cdt.rds")
+Cdt_model<-readRDS("./Cdt.rds")
 
-Cdp_model<-readRDS("C:/Coding/Simulation_DataSearch/Cdp.rds")
+Cdp_model<-readRDS("./Cdp.rds")
 
-Cdf_model<-readRDS("C:/Coding/Simulation_DataSearch/Cdf.rds")
+Cdf_model<-readRDS("./Cdf.rds")
 
-Cm_model<-readRDS("C:/Coding/Simulation_DataSearch/Cm.rds")
+Cm_model<-readRDS("./Cm.rds")
 
 predicted_Cl = predict(Cl_model, newdata = test_data)
 

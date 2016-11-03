@@ -18,20 +18,20 @@ public class Main {
 		try {
 			
 			//Find Cl modeling file
-			File f = new File("C:/Coding/Simulation_DataSearch/Cl.rds");
+			File f = new File("./Cl.rds");
 			
 			//Make a directory path variable
 			String dirPath;
 			
 			//If Cl modeling file exists,
-			//then executes interaction3.R
+			//then executes readModel.R
 			//Otherwise,
-			//executes interaction1.R
+			//executes saveModel.R
 			
 			if(f.exists())
-				dirPath = "./interaction3.R";
+				dirPath = "./readModel.R";
 			else
-				dirPath = "./interaction1.R";
+				dirPath = "./saveModel.R";
 			
 			//Make a variable for executing command line
 			StringBuffer cmd = new StringBuffer();
